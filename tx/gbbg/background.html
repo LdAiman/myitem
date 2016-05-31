@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<!--声明当前页面的编码集charset=gbk中文编码gb2312,charset=utf-8 国际编码-->
+		<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+		<!--当前页面的三要素-->
+		<title>标题</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="description" content="描述">		
+		<!--引用css , js-->
+<style type="text/css">
+*{margin:0px; padding:0px;}
+/*css样式的表达方式: 属性:值;  身高:1.65m;  性别:女; px像素*/
+body{background:url("images/1.jpg");}
+#menu{width:200px;/*宽*/ height:250px;/*高*/ background:#fff;/*背景颜色*/display:none;/*隐藏*/ 
+		box-shadow:0px 0px 10px #fff; position:absolute; top:100px; left:500px;}
+#menu ul li{width:200px; height:35px; border-bottom:1px solid #ddd;/*粗细1px solid red;边框*/ 
+				list-style-type:none;/*去掉圆点*/ font-size:14px; color:#666;
+				font-family:"微软雅黑";line-height:35px;/*行高，文字竖直距中*/
+				/*padding-left:20px;*/ text-indent:20px;}
+#menu ul li img{margin-right:10px;}
+#menu ul li.hover{background:#339999;color:#fff;}
+
+/*背景墙样式*/
+#bg{width:730px;height:360px; background:rgba(0,0,0,0.5); position:absolute; top:100px; left:300px;
+		display:none;}
+#bg .title{width:730px; height:46px; background:url("images/title_bg.jpg"); color:#fff;
+			font-size:18px; font-family:"微软雅黑"; line-height:46px; text-indent:10px;
+			cursor:move;}
+#bg .title img.close{float:right;/*右浮动*/ margin-top:10px; margin-right:10px;cursor:pointer;}
+#bg ul li{list-style-type:none; width:200px; height:125px; border:5px solid #fff; float:left;
+			margin:10px 16px;}
+</style>
+
+	</head>
+<body>
+<!--div盒子模型，高度，宽度，放内容的长方形容器  姓名="代码女神"-->
+
+<!--菜单内容开始-->
+<div id="menu">
+	<ul>
+		<li><img src="images/ico1.jpg" align="absmiddle"/>添加应用0</li>
+		<li><img src="images/ico2.jpg" align="absmiddle"/>获取课程1</li>
+		<li><img src="images/ico3.jpg" align="absmiddle"/>添加笔记2</li>
+		<li><img src="images/ico4.jpg" align="absmiddle"/>刷新3</li>
+		<li><img src="images/ico5.jpg" align="absmiddle"/>上传资料4</li>
+		<li><img src="images/ico6.jpg" align="absmiddle"/>更换背景5</li>
+		<li><img src="images/ico7.jpg" align="absmiddle"/>注销6</li>
+	</ul>
+</div>
+<!--菜单内容结束-->
+
+<!--背景更换墙开始-->
+<div id="bg">
+	<div class="title" id="title"><img src="images/close.png" class="close"/>桌面背景墙 </div>
+	<ul>
+		<li><img src="images/s_1.jpg" /></li>
+		<li><img src="images/s_2.jpg" /></li>
+		<li><img src="images/s_3.jpg" /></li>
+		<li><img src="images/s_4.jpg" /></li>
+		<li><img src="images/s_5.jpg" /></li>
+		<li><img src="images/s_6.jpg" /></li>
+	</ul>
+</div>
+<!--背景更换墙结束-->
+
+
+
+
+
+
+
+
+<!--引用外部jquery 类库文件-->
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	//禁止浏览自带的右键菜单功能
+	noright(document);
+	function noright(obj) {
+    if (obj) {
+        obj.oncontextmenu  =  function() {
+            return false;
+        }
+        obj.ondragstart  =  function() {
+            return false;
+        }
+        obj.onselectstart  =  function() {
+            return false;
+        }
+        obj.onselect  =  function() {
+            obj.selection.empty();
+        }
+        obj.oncopy  =  function() {
+            obj.selection.empty();
+        }
+        obj.onbeforecopy  =  function() {
+            return false;
+        }
+    }
+};
+	$(document).mousedown(function(e){
+		var key=e.which;//获取鼠标按键的状态 1左键  2滚 3右
+		//alert(key);
+		if(key==3){
+			var _top=e.clientY;
+			var _left=e.clientX;
+			//alert(_top+"sss"+_left);
+			$("#menu").show().css({left:_left,top:_top});//显示,并动态给他赋值
+		}
+	});
+
+	//点击浏览器其它地方时，要隐藏菜单
+	$(document).click(function(){
+		$("#menu").hide();//隐藏
+	});
+
+	$("#menu ul li").mouseover(function(){
+		$(this).addClass("hover").siblings().removeClass("hover");//添加class="hover"
+	});
+
+	$("#menu ul li").click(function(){
+		var _index=$(this).index();//获取序列号
+		//alert(_index);
+		if(_index==5){
+			//alert("更换背景");
+			$("#bg").show();//显示更换背景墙
+		}
+	});
+
+
+	//点击li更换背景
+	$("#bg ul li").click(function(){
+		var simg=$(this).find("img").attr("src");
+		//alert(simg);
+		var bimg=simg.replace("s_","");
+		//alert(bimg);
+		$("body").css("background","url("+bimg+")");
+		});
+
+		//点击关闭
+		$("#bg .title img.close").click(function(){
+			$("#bg").hide();//隐藏
+		});
+</script>
+
+<script type="text/javascript" src="js/dray.js"></script>
+<script type="text/javascript">
+	window.onload = function(){
+		init(document.getElementById("title"));//记得初始化
+	};
+</script>
+
+
+
+<!--
+	1、如何给我们的浏览器窗口，添加一张背景图片 background:url("地址");
+	2、如何构建一个有宽度，有高度的长方形(div盒子模型);
+	3、利用最新技术 html5+css3 制作阴影效果  box-shadow:水平偏移 竖直偏移量 半径 颜色;
+	4、讲到了外边距的概念margin, 解决了外边距的兼容型
+	5、通过分析，得出这个menu盒子，他的位置可以任意的移动，所以把他设为绝对定位元素
+		position:absolute; top:100px;(与浏览器上面的距离) left:500px;(与浏览器左边的距里)
+	6、利用ul无序列表来制作里面菜单内容,<ul>
+											<li>111</li>
+											<li>111</li>
+										</ul>
+	7、给每一个li添加宽度和高度
+	8、去掉li前面的圆点 list-style-type:none;  讲到了内边距的概念 padding 
+		,解决了内边距的兼容问题
+	9、控制li文字的样式 (大小，颜色，字体类型，竖直距中)
+	10、如何在页面当中插入一张图片 <img src="地址" />
+	11、给图片加上align="absmiddle"控制图片和文字在竖直距中, 给图片加上右外距
+		margin-right:10px),给li加上 text-indent:20px;
+	12、如何给页面当中元素添加边框 border:粗细(1px) 风格(solid) 颜色(#ddd);
+-->
+</body>
+</html>
