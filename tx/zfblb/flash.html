@@ -1,73 +1,73 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
-		<!--ÉùÃ÷µ±Ç°Ò³ÃæµÄ±àÂë¼¯charset=gbkÖĞÎÄ±àÂëgb2312,charset=utf-8 ¹ú¼Ê±àÂë-->
+		<!--å£°æ˜å½“å‰é¡µé¢çš„ç¼–ç é›†charset=gbkä¸­æ–‡ç¼–ç gb2312,charset=utf-8 å›½é™…ç¼–ç -->
 		<meta http-equiv="Content-Type" content="text/html; charset=gbk">
-		<!--µ±Ç°Ò³ÃæµÄÈıÒªËØ-->
-		<title>±êÌâ</title>
-		<meta name="Keywords" content="¹Ø¼ü´Ê,¹Ø¼ü´Ê">
-		<meta name="description" content="ÃèÊö">	
-		<!--ÒıÓÃcss , js-->
+		<!--å½“å‰é¡µé¢çš„ä¸‰è¦ç´ -->
+		<title>æ ‡é¢˜</title>
+		<meta name="Keywords" content="å…³é”®è¯,å…³é”®è¯">
+		<meta name="description" content="æè¿°">	
+		<!--å¼•ç”¨css , js-->
 <style type="text/css">
 *{margin:0px; padding:0px;}
-/*cssÑùÊ½µÄ±í´ï·½Ê½: ÊôĞÔ:Öµ; Éí¸ß:1.7m; ÑÕÉ«:ºìÉ«; pxÏñËØ*/
-#flash{width:100%;/*¿í¶È*/ height:400px;/*¸ß¶È*/ background:#00FF66;/*±³¾°ÑÕÉ«*/ margin-top:100px;
-		position:relative;/*Ïà¶Ô¶¨Î»µÄÔªËØ*/}
-#flash ul.imglist li{width:100%; height:400px;list-style-type:none;/*È¥Ô²µã*/
-			 position:absolute;/*¾ø¶Ô¶¨Î»*/ top:0px;}
+/*cssæ ·å¼çš„è¡¨è¾¾æ–¹å¼: å±æ€§:å€¼; èº«é«˜:1.7m; é¢œè‰²:çº¢è‰²; pxåƒç´ */
+#flash{width:100%;/*å®½åº¦*/ height:400px;/*é«˜åº¦*/ background:#00FF66;/*èƒŒæ™¯é¢œè‰²*/ margin-top:100px;
+		position:relative;/*ç›¸å¯¹å®šä½çš„å…ƒç´ */}
+#flash ul.imglist li{width:100%; height:400px;list-style-type:none;/*å»åœ†ç‚¹*/
+			 position:absolute;/*ç»å¯¹å®šä½*/ top:0px;}
 #flash ul.but{position:absolute; z-index:5;  top:350px; left:45%;}
 #flash ul.but li{width:13px; height:13px;list-style-type:none;
-					float:left;/*¸¡¶¯*/background:url("images/dot.png") -13px 0px; 
+					float:left;/*æµ®åŠ¨*/background:url("images/dot.png") -13px 0px; 
 					margin-left:4px;}
 #flash ul.but li.hover{background:url("images/dot.png");}
 </style>
 
 	</head>
 <body>
-<!--div ºĞ×ÓÄ£ĞÍ£¬¸ß¶È£¬¿í¶È£¬·ÅÄÚÈİµÄ³¤·½ĞÎÈİÆ÷  ĞÕÃû="´úÂëÅ®Éñ"-->
+<!--div ç›’å­æ¨¡å‹ï¼Œé«˜åº¦ï¼Œå®½åº¦ï¼Œæ”¾å†…å®¹çš„é•¿æ–¹å½¢å®¹å™¨  å§“å="ä»£ç å¥³ç¥"-->
 <div id="flash">
-	<!--Í¼Æ¬ÁĞ±í¿ªÊ¼-->
+	<!--å›¾ç‰‡åˆ—è¡¨å¼€å§‹-->
 	 <ul class="imglist">
-		<li style="background:url('images/img1.jpg') center;z-index:4 ">0000</li>
-		<li style="background:url('images/img2.jpg') center;">11111</li>
-		<li style="background:url('images/img3.jpg') center;">2222</li>
-		<li style="background:url('images/img4.jpg') center;">3333</li>
+		<li style="background:url('images/img1.jpg') center;z-index:4 "></li>
+		<li style="background:url('images/img2.jpg') center;"></li>
+		<li style="background:url('images/img3.jpg') center;"></li>
+		<li style="background:url('images/img4.jpg') center;"></li>
 	 </ul>
-	<!--Í¼Æ¬ÁĞ±í½áÊø-->
+	<!--å›¾ç‰‡åˆ—è¡¨ç»“æŸ-->
 	
-	<!--°´Å¤¿ªÊ¼-->
+	<!--æŒ‰æ‰­å¼€å§‹-->
 	<ul class="but">
 		<li  class="hover"></li>
 		<li></li>
 		<li></li>
 		<li></li>
 	</ul>
-	<!--°´Å¤½áÊø-->
+	<!--æŒ‰æ‰­ç»“æŸ-->
 
 </div>
-<!--ÒıÓÃÍâ²¿jqueryÎÄ¼ş-->
+<!--å¼•ç”¨å¤–éƒ¨jqueryæ–‡ä»¶-->
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript">
 var _index=0;
 var playTime=null;
 $("ul.but li").hover(function(){
-	clearInterval(playTime);//Çå³ı¶¨Ê±Æ÷
-	//Êó±ê»¬µ½ÉÏÃæ
-	$(this).addClass("hover").siblings().removeClass("hover");//Ìí¼Ó class="hover"
-	_index=$(this).index();//Êó±ê·ÅÉÏÈ¥µÄÄÇ¸öliµÄĞòÁĞºÅ
+	clearInterval(playTime);//æ¸…é™¤å®šæ—¶å™¨
+	//é¼ æ ‡æ»‘åˆ°ä¸Šé¢
+	$(this).addClass("hover").siblings().removeClass("hover");//æ·»åŠ  class="hover"
+	_index=$(this).index();//é¼ æ ‡æ”¾ä¸Šå»çš„é‚£ä¸ªliçš„åºåˆ—å·
 	//alert(_index);
 	$("ul.imglist li").eq(_index).fadeIn().siblings().fadeOut();
 },function(){
-	//Êó±êÒÆ¿ª
-	auto_Play();//Æğ¶¯×Ô¶¯²¥·Å
+	//é¼ æ ‡ç§»å¼€
+	auto_Play();//èµ·åŠ¨è‡ªåŠ¨æ’­æ”¾
 });
 
 
-//×Ô¶¯ÂÖ²¥
+//è‡ªåŠ¨è½®æ’­
 function auto_Play(){
 	
 	playTime=setInterval(function(){
-		_index++;//ĞòÁĞºÅ¼Ó index+1
+		_index++;//åºåˆ—å·åŠ  index+1
 		//alert(_index);
 		//if(_index<=3){
 		if(_index>3){_index=0;}
@@ -77,7 +77,7 @@ function auto_Play(){
 	},2000);	
 }
 
-auto_Play();//µ÷ÓÃ
+auto_Play();//è°ƒç”¨
 </script>
 
 
@@ -86,13 +86,13 @@ auto_Play();//µ÷ÓÃ
 
 
 <!--
-	1¡¢ÔÚÒ³Ãæµ±ÖĞ£¬¹¹½¨Ò»¸öÓĞ¿í¶È£¬¸ß¶È£¬·ÅÄÚÈİµÄ³¤·½ĞÎÈİÆ÷(divºĞ×ÓÄ£ĞÍ)
-	2¡¢½²µ½ÁËÍâ±ß¾àµÄ¸ÅÄî margin,½â¾öÁËÍâ±ß¾àµÄ¼æÈİÎÊÌâ *{margin:0px;}
-	3¡¢½²µ½ÁËulÎŞĞòÁĞ±í±êÇ©,¸øÃ¿Ò»¸öliÌí¼Ó¿í¶ÈºÍ¸ß¶È ,È¥µôliÇ°ÃæµÄÔ²µã;
-	4¡¢½²µ½ÁËÄÚ±ß¾àµÄ¸ÅÄî padding ,½â¾öÁËÄÚ±ß¾àµÄ¼æÈİÎÊÌâ *{padding:0px;}
-	5¡¢ÈçºÎ¸øliÌí¼Ó±³¾°Í¼Æ¬ background:url('µØÖ·') center(±³¾°Í¼Æ¬¾àÖĞ);
-	6¡¢ÀûÓÃ¾ø¶Ô¶¨Î»£¬°ÑÎÒÃÇµÄËÄÕÅÍ¼Æ¬(li)·ÅÔÚÒ»Æğ , ¸øµÚÒ»¸öli¼ÓÉÏ z-index:4; 
-		°ÑµÚÒ»ÕÅÍ¼Æ¬µ÷µ½×îÉÏÃæ
+	1ã€åœ¨é¡µé¢å½“ä¸­ï¼Œæ„å»ºä¸€ä¸ªæœ‰å®½åº¦ï¼Œé«˜åº¦ï¼Œæ”¾å†…å®¹çš„é•¿æ–¹å½¢å®¹å™¨(divç›’å­æ¨¡å‹)
+	2ã€è®²åˆ°äº†å¤–è¾¹è·çš„æ¦‚å¿µ margin,è§£å†³äº†å¤–è¾¹è·çš„å…¼å®¹é—®é¢˜ *{margin:0px;}
+	3ã€è®²åˆ°äº†ulæ— åºåˆ—è¡¨æ ‡ç­¾,ç»™æ¯ä¸€ä¸ªliæ·»åŠ å®½åº¦å’Œé«˜åº¦ ,å»æ‰liå‰é¢çš„åœ†ç‚¹;
+	4ã€è®²åˆ°äº†å†…è¾¹è·çš„æ¦‚å¿µ padding ,è§£å†³äº†å†…è¾¹è·çš„å…¼å®¹é—®é¢˜ *{padding:0px;}
+	5ã€å¦‚ä½•ç»™liæ·»åŠ èƒŒæ™¯å›¾ç‰‡ background:url('åœ°å€') center(èƒŒæ™¯å›¾ç‰‡è·ä¸­);
+	6ã€åˆ©ç”¨ç»å¯¹å®šä½ï¼ŒæŠŠæˆ‘ä»¬çš„å››å¼ å›¾ç‰‡(li)æ”¾åœ¨ä¸€èµ· , ç»™ç¬¬ä¸€ä¸ªliåŠ ä¸Š z-index:4; 
+		æŠŠç¬¬ä¸€å¼ å›¾ç‰‡è°ƒåˆ°æœ€ä¸Šé¢
 -->	
 </body>
 </html>
